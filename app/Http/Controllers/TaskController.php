@@ -14,12 +14,14 @@ class TaskController extends Controller
     public function store(Request $request) 
     {
         $data = $request->validate([
-            'content' => 'required'
+            'content' => 'required|string|max:180',
         ]);
     
-        Task::create($data);
+        Task::create([
+            'content' => $request->input('content'),
+        ]);
 
-        return back();
+        return redirect()->route('index');
 
     }
 }
