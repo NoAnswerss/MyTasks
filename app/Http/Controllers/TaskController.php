@@ -11,4 +11,15 @@ class TaskController extends Controller
         $mytasks = Task::all();
         return view('index', compact('mytasks'));
     }
+    public function store(Request $request) 
+    {
+        $data = $request->validate([
+            'content' => 'required'
+        ]);
+    
+        Task::create($data);
+
+        return back();
+
+    }
 }
