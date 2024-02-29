@@ -31,8 +31,20 @@
             @foreach($mytasks as $task)
             <li class="text-white">{{ $task->content }}</li>
             @endforeach
+            <li class="list-none">
+                <span class="flex flex-row">
+                    <a href="">Items left</a>
+                    <a href="">All</a>
+                    <a href="">Active</a>
+                    <a href="">Completed</a>
+                    <a href="">Clear Completed</a>
+                </span>
+            </li>
         </ul>
     </form>
+    <footer>
+        <h2>Drag and drop to reorder list</h2>
+    </footer>
 
 </body>
 
